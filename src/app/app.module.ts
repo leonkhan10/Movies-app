@@ -11,24 +11,21 @@ import { GenresComponent } from './pages/genres/genres.component';
 import { TvshowsComponent } from './pages/tvshows/tvshows.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './components/slider/slider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    MoviesComponent,
-    GenresComponent,
-    TvshowsComponent,
-    SliderComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        HomeComponent,
+        MoviesComponent,
+        GenresComponent,
+        TvshowsComponent,
+        SliderComponent
+    ],
+    imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
