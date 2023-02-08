@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -20,6 +19,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { CarouselModule } from 'primeng/carousel';
         PaginatorModule,
         TabViewModule,
         ImageModule,
-        CarouselModule
+        CarouselModule,
+        InputTextModule
     ],
     providers: [],
     bootstrap: [AppComponent]
