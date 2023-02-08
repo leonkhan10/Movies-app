@@ -1,48 +1,49 @@
-@import "/src/styles/colors";
+@import '../../../styles/colors';
 
 :host ::ng-deep {
-    .p-tabview-nav {
-        justify-content: center;
+  .p-tabview-nav {
+    justify-content: center;
+    li {
+      .p-tabview-nav-link {
+        background: $bgColor;
+      }
 
-        li.p-highlight .p-tabview-nav-link {
-            background: $bgColor;
-        }
+      &.p-highlight .p-tabview-nav-link {
+        background: $bgColor;
+      }
     }
+  }
 }
 
-
 .poster {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .overview {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 .stat {
-    display: flex;
-    margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
+  .label {
+    width: 150px;
+    font-weight: bold;
+  }
 
-    .label {
-        width: 150px;
-        font-weight: bold;
-    }
-
-    .value {
-        color: $Gold;
-    }
+  .value {
+    color: $primaryColor;
+  }
 }
 
-
 .actor {
-    padding: 10px;
-    img {
-        width: 100%;
-    }
-
-    span {
-        display: block;
-        text-align: center;
-        margin: 10px 0;
-    }
+  padding: 10px;
+  img {
+    width: 100%;
+  }
+  span {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
 }
