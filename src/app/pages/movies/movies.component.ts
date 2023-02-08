@@ -12,13 +12,11 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MoviesComponent implements OnInit {
     movies: Movie[] = [];
     genreId: string | null = null;
-    searchValue: string | null = null
+    searchValue: string | null = null;
 
     constructor(private moviesService: MoviesService, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-
-        this.searchValue = "Hello"
         this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
             if (genreId) {
                 this.genreId = genreId;
@@ -29,8 +27,8 @@ export class MoviesComponent implements OnInit {
         });
     }
 
-    getPageMovies(page: number) {
-        this.moviesService.searchMovies(page).subscribe((movies) => {
+    getPageMovies(page: number, searchKeyword?: string) {
+        this.moviesService.searchMovies(page, searchKeyword).subscribe((movies) => {
             this.movies = movies;
         });
     }
@@ -44,15 +42,19 @@ export class MoviesComponent implements OnInit {
     paginate(event: any) {
         const pageNumber = event.page + 1;
         if (this.genreId) {
-            this.getMoviesByGenre(this.genreId,pageNumber);
+            this.getMoviesByGenre(this.genreId, pageNumber);
         } else {
-            this.getPageMovies(pageNumber);
+            if (this.searchValue) {
+                this.getPageMovies(pageNumber, this.searchValue);
+            }else {
+                this.getPageMovies(pageNumber)
+            }
         }
     }
 
     searchChanged() {
-        
+        if (this.searchValue) {
+            this.getPageMovies(1, this.searchValue);
+        }
     }
-
-
 }
